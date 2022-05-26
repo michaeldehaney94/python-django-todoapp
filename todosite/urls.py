@@ -22,4 +22,15 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('delete/<int:id>/', views.delete, name='delete'),
     path('edit/<int:id>/', views.edit, name='edit'),
+
+    # Class Based Generic View urls
+    # Taskview path route
+    path('cbvindex/', views.TaskListView.as_view(), name='cbvindex'),
+    # Detailview path route, 'pk' is primary key same as 'id'
+    path('cbvdetail/<int:pk>/', views.TaskDetailView.as_view(), name='cbvdetail'),
+    # Updateview path route
+    path('cbvupdate/<int:pk>/', views.TaskUpdateView.as_view(), name='cbvupdate'),
+    # Deleteview path route
+    path('cbvdelete/<int:pk>/', views.TaskDeleteView.as_view(), name='cbvdelete'),
 ]
+
